@@ -82,9 +82,6 @@ body[data-hds-enabled] {
 [data-hds-enabled] p, [data-hds-enabled] div {
   font-size: 1rem;
 }
-[data-hds-enabled] p + p {
-  margin-top: 1.25vw;
-}
 [data-hds-enabled] em {
   color: inherit;
   font-family: inherit;

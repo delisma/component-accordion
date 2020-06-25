@@ -24,6 +24,10 @@ function accordionTrigger(trigger) {
 $(document).ready(function () {
     $(document).on("click", "[data-hds-accordion-trigger]", function (e) {
         e.preventDefault();
-        accordionTrigger(this);
+        if ($(this).parent("[data-hds-accordion]").hasAttr("data-hds-disabled") == true) {
+            // Do nothing.
+        } else {
+            accordionTrigger(this);
+        }
     });
 });

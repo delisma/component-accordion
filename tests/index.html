@@ -55,6 +55,31 @@
                     <p>Accordion Content</p>
                 </div>
             </div>
+            <h2>JS Disabled Accordion</h2>
+            <div data-hds-accordion="left" data-hds-disabled>
+                <button 
+                    aria-expanded="false" 
+                    data-hds-accordion-trigger 
+                    tabindex="0" 
+                    type="button">
+                    <span data-hds-accordion-trigger-label>Click to view...</span>
+                    <span 
+                        aria-hidden="true" 
+                        data-hds-accordion-add-icon>+</span>
+                    <span 
+                        aria-hidden="true" 
+                        data-hds-accordion-remove-icon>-</span>
+                    <div>
+                        <p>Accordion Title</p>
+                        <span>Accordion Subtitle</span>
+                    </div>
+                </button>
+                <div 
+                    aria-hidden="true" 
+                    data-hds-accordion-content>
+                    <p>Accordion Content</p>
+                </div>
+            </div>
             <h1>Groups of Accordions</h1>
             <h2>Odd Group of Accordions</h2>
             <div data-hds-accordion-group="odd">
