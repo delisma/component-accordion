@@ -1,0 +1,1 @@
+console.log("Component/Accordion is here!");

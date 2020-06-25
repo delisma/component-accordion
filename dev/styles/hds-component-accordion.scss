@@ -1,0 +1,144 @@
+// Hydrogen / Components / Accordion
+
+@forward "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults";
+@use "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults" as hds;
+@use "../../node_modules/@hydrogen-design-system/core/dist/styles/hds-core";
+
+[data-hds-enabled] {
+
+    // Generic Styles
+    [data-hds-accordion] {
+
+        // Trigger
+        [data-hds-accordion-trigger] {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            width: 100%;
+
+            // Accessibility Label
+            [data-hds-accordion-trigger-label] {
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: -100vw;
+                width: 1px;
+            }
+
+            // Trigger Icons
+            [data-hds-accordion-add-icon] {
+                display: block;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                width: 1rem;
+            }
+            [data-hds-accordion-remove-icon] {
+                display: none;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                width: 1rem;
+            }
+
+        }
+
+        // Content
+        [data-hds-accordion-content] {
+            display: none;
+        }
+
+        // Active/Open State
+        &.hds-active {
+
+            // Trigger
+            [data-hds-accordion-trigger] {
+
+                // Trigger Icons
+                [data-hds-accordion-add-icon] {
+                    display: none;
+                }
+                [data-hds-accordion-remove-icon] {
+                    display: block;
+                }
+
+            }
+
+            // Content
+            [data-hds-accordion-content] {
+                display: block;
+            }
+
+        }
+
+        // Focused State
+        [data-hds-accordion-trigger]:focus {
+            outline: hds.$focus-color solid 3px;
+        }
+    }
+
+    // Right Orientation
+    [data-hds-accordion="right"] {
+
+        // Trigger
+        [data-hds-accordion-trigger] {
+            padding-right: 5rem;
+
+            // Trigger Icons
+            [data-hds-accordion-add-icon] {
+                right: 2.5rem;
+            }
+            [data-hds-accordion-remove-icon] {
+                right: 2.5rem;
+            }
+
+        }
+
+    }
+
+    // Left Orientation
+    [data-hds-accordion="left"] {
+
+        // Trigger
+        [data-hds-accordion-trigger] {
+            padding-left: 5rem;
+
+            // Trigger Icons
+            [data-hds-accordion-add-icon] {
+                left: 2.5rem;
+            }
+            [data-hds-accordion-remove-icon] {
+                left: 2.5rem;
+            }
+
+        }
+
+        // Content
+        [data-hds-accordion-content] {
+            padding-left: 5rem;
+        }
+
+    }
+
+    // Group w/ Alternating Backgrounds
+    [data-hds-accordion-group="odd"] {
+        [data-hds-accordion] {
+            &:nth-child(odd) {
+                background: hds.$accordion-alternating-background-color;
+            }
+        }
+    }
+    [data-hds-accordion-group="even"] {
+        [data-hds-accordion] {
+            &:nth-child(even) {
+                background: hds.$accordion-alternating-background-color;
+            }
+        }
+    }
+    
+}
