@@ -23,17 +23,17 @@ sass.compiler = require('sass');
     function concatTestScripts() {
         return src([
             // Core
-            'node_modules/@hydrogen-design-system/core/dist/scripts/hydrogen-core.min.js',
+            'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
             // Component
-            'dev/scripts/hds-component-accordion.js'
+            'dev/scripts/h2-component-accordion.js'
         ])
-        .pipe(concat('hds-component-accordion.js'))
+        .pipe(concat('h2-component-accordion.js'))
         .pipe(dest('tests/cache/scripts'));
     }
 
     // Compile and Move Sass
     function compileTestSass() {
-        return src('dev/styles/hds-component-accordion.scss')
+        return src('dev/styles/h2-component-accordion.scss')
         .pipe(sass())
         .pipe(postcss([autoprefixer()]))
         .pipe(dest('tests/cache/styles'));
@@ -76,11 +76,11 @@ sass.compiler = require('sass');
         function concatScripts() {
             return src([
                 // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/hydrogen-core.min.js',
+                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
                 // Component
-                'dev/scripts/hds-component-accordion.js'
+                'dev/scripts/h2-component-accordion.js'
             ])
-            .pipe(concat('hds-component-accordion.js'))
+            .pipe(concat('h2-component-accordion.js'))
             .pipe(dest('dist/scripts'));
         }
 
@@ -88,11 +88,11 @@ sass.compiler = require('sass');
         function uglifyScripts() {
             return src([
                 // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/hydrogen-core.min.js',
+                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
                 // Component
-                'dev/scripts/hds-component-accordion.js'
+                'dev/scripts/h2-component-accordion.js'
             ])
-            .pipe(concat('hds-component-accordion.js'))
+            .pipe(concat('h2-component-accordion.js'))
             .pipe(uglify())
             .pipe(rename(function(path) {
                 path.extname = ".min.js";
@@ -104,11 +104,11 @@ sass.compiler = require('sass');
         function gzipScripts() {
             return src([
                 // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/hydrogen-core.min.js',
+                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
                 // Component
-                'dev/scripts/hds-component-accordion.js'
+                'dev/scripts/h2-component-accordion.js'
             ])
-            .pipe(concat('hds-component-accordion.js'))
+            .pipe(concat('h2-component-accordion.js'))
             .pipe(uglify())
             .pipe(rename(function(path) {
                 path.extname = ".min.js";
@@ -127,7 +127,7 @@ sass.compiler = require('sass');
 
         // Compiled, Raw
         function compileSass() {
-            return src('dev/styles/hds-component-accordion.scss')
+            return src('dev/styles/h2-component-accordion.scss')
             .pipe(sass())
             .pipe(postcss([autoprefixer()]))
             .pipe(dest('dist/styles'));
@@ -135,7 +135,7 @@ sass.compiler = require('sass');
 
         // Compiled, Nanoed
         function nanoSass() {
-            return src('dev/styles/hds-component-accordion.scss')
+            return src('dev/styles/h2-component-accordion.scss')
             .pipe(sass())
             .pipe(postcss([autoprefixer()]))
             .pipe(postcss([cssnano()]))
@@ -147,7 +147,7 @@ sass.compiler = require('sass');
 
         // Compiled, Nanoed, GZipped
         function gzipSass() {
-            return src('dev/styles/hds-component-accordion.scss')
+            return src('dev/styles/h2-component-accordion.scss')
             .pipe(sass())
             .pipe(postcss([autoprefixer()]))
             .pipe(postcss([cssnano()]))

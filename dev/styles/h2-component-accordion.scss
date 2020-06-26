@@ -1,16 +1,16 @@
 // Hydrogen / Components / Accordion
 
 @forward "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults";
-@use "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults" as hds;
-@use "../../node_modules/@hydrogen-design-system/core/dist/styles/hds-core";
+@use "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults" as variables;
+@use "../../node_modules/@hydrogen-design-system/core/dist/styles/h2-core";
 
-[data-hds-enabled] {
+[data-h2-enabled] {
 
     // Generic Styles
-    [data-hds-accordion] {
+    [data-h2-accordion] {
 
         // Trigger
-        [data-hds-accordion-trigger] {
+        [data-h2-accordion-trigger] {
             background: none;
             border: none;
             cursor: pointer;
@@ -19,7 +19,7 @@
             width: 100%;
 
             // Accessibility Label
-            [data-hds-accordion-trigger-label] {
+            [data-h2-accordion-trigger-label] {
                 height: 1px;
                 overflow: hidden;
                 position: absolute;
@@ -29,7 +29,7 @@
             }
 
             // Trigger Icons
-            [data-hds-accordion-add-icon] {
+            [data-h2-accordion-add-icon] {
                 display: block;
                 position: absolute;
                 top: 50%;
@@ -37,7 +37,7 @@
                 transform: translate(-50%, -50%);
                 width: 1rem;
             }
-            [data-hds-accordion-remove-icon] {
+            [data-h2-accordion-remove-icon] {
                 display: none;
                 position: absolute;
                 top: 50%;
@@ -49,7 +49,7 @@
         }
 
         // Content
-        [data-hds-accordion-content] {
+        [data-h2-accordion-content] {
             display: none;
         }
 
@@ -57,43 +57,43 @@
         &.hds-active {
 
             // Trigger
-            [data-hds-accordion-trigger] {
+            [data-h2-accordion-trigger] {
 
                 // Trigger Icons
-                [data-hds-accordion-add-icon] {
+                [data-h2-accordion-add-icon] {
                     display: none;
                 }
-                [data-hds-accordion-remove-icon] {
+                [data-h2-accordion-remove-icon] {
                     display: block;
                 }
 
             }
 
             // Content
-            [data-hds-accordion-content] {
+            [data-h2-accordion-content] {
                 display: block;
             }
 
         }
 
         // Focused State
-        [data-hds-accordion-trigger]:focus {
-            outline: hds.$focus-color solid 3px;
+        [data-h2-accordion-trigger]:focus {
+            outline: variables.$focus-color solid 3px;
         }
     }
 
     // Right Orientation
-    [data-hds-accordion="right"] {
+    [data-h2-accordion="right"] {
 
         // Trigger
-        [data-hds-accordion-trigger] {
+        [data-h2-accordion-trigger] {
             padding-right: 5rem;
 
             // Trigger Icons
-            [data-hds-accordion-add-icon] {
+            [data-h2-accordion-add-icon] {
                 right: 2.5rem;
             }
-            [data-hds-accordion-remove-icon] {
+            [data-h2-accordion-remove-icon] {
                 right: 2.5rem;
             }
 
@@ -102,41 +102,41 @@
     }
 
     // Left Orientation
-    [data-hds-accordion="left"] {
+    [data-h2-accordion="left"] {
 
         // Trigger
-        [data-hds-accordion-trigger] {
+        [data-h2-accordion-trigger] {
             padding-left: 5rem;
 
             // Trigger Icons
-            [data-hds-accordion-add-icon] {
+            [data-h2-accordion-add-icon] {
                 left: 2.5rem;
             }
-            [data-hds-accordion-remove-icon] {
+            [data-h2-accordion-remove-icon] {
                 left: 2.5rem;
             }
 
         }
 
         // Content
-        [data-hds-accordion-content] {
+        [data-h2-accordion-content] {
             padding-left: 5rem;
         }
 
     }
 
     // Group w/ Alternating Backgrounds
-    [data-hds-accordion-group="odd"] {
-        [data-hds-accordion] {
+    [data-h2-accordion-group="odd"] {
+        [data-h2-accordion] {
             &:nth-child(odd) {
-                background: hds.$accordion-alternating-background-color;
+                background: variables.$accordion-alternating-background-color;
             }
         }
     }
-    [data-hds-accordion-group="even"] {
-        [data-hds-accordion] {
+    [data-h2-accordion-group="even"] {
+        [data-h2-accordion] {
             &:nth-child(even) {
-                background: hds.$accordion-alternating-background-color;
+                background: variables.$accordion-alternating-background-color;
             }
         }
     }

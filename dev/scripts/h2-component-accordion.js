@@ -1,8 +1,8 @@
 // Hydrogen / Components / Accordion
 
 function accordionTrigger(trigger) {
-    var accordion = "[data-hds-accordion]";
-    var content = "[data-hds-accordion-content]";
+    var accordion = "[data-h2-accordion]";
+    var content = "[data-h2-accordion-content]";
     if ($(trigger).parent(accordion).hasClass("hds-active")) {
         $(trigger).attr("aria-expanded", "false");
         $(trigger).parent(accordion).removeClass("hds-active");
@@ -22,9 +22,9 @@ function accordionTrigger(trigger) {
 }
 
 $(document).ready(function () {
-    $(document).on("click", "[data-hds-accordion-trigger]", function (e) {
+    $(document).on("click", "[data-h2-accordion-trigger]", function (e) {
         e.preventDefault();
-        if ($(this).parent("[data-hds-accordion]").hasAttr("data-hds-disabled") == true) {
+        if ($(this).parent("[data-h2-accordion]").hasAttr("data-h2-disabled") == true) {
             // Do nothing.
         } else {
             accordionTrigger(this);
