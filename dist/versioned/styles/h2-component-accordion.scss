@@ -1,0 +1,10 @@
+// Hydrogen / Components / Accordion
+
+@forward "core/defaults";
+@use "core/defaults" as var;
+@use "core/core" as core;
+@use "component-accordion" as *;
+
+// Note: 0.0.1 is replaced during the build script with the current component version, set in Gulpfile.js
+@include core.h2Core($component: "accordion", $componentVersion: "0.0.1");
+@include h2ComponentAccordionVersion($componentVersion: "0.0.1", $focus-color: var.$focus-color, $accordion-alternating-background-color: var.$accordion-alternating-background-color);

@@ -1,10 +1,6 @@
 // Hydrogen / Components / Accordion
 
-@forward "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults";
-@use "../../node_modules/@hydrogen-design-system/core/dist/styles/defaults" as variables;
-@use "../../node_modules/@hydrogen-design-system/core/dist/styles/h2-core";
-
-[data-h2-enabled] {
+@mixin h2ComponentAccordion($focus-color, $accordion-alternating-background-color) {
 
     // Generic Styles
     [data-h2-accordion] {
@@ -78,7 +74,7 @@
 
         // Focused State
         [data-h2-accordion-trigger]:focus {
-            outline: variables.$focus-color solid 3px;
+            outline: $focus-color solid 3px;
         }
     }
 
@@ -129,16 +125,28 @@
     [data-h2-accordion-group="odd"] {
         [data-h2-accordion] {
             &:nth-child(odd) {
-                background: variables.$accordion-alternating-background-color;
+                background: $accordion-alternating-background-color;
             }
         }
     }
     [data-h2-accordion-group="even"] {
         [data-h2-accordion] {
             &:nth-child(even) {
-                background: variables.$accordion-alternating-background-color;
+                background: $accordion-alternating-background-color;
             }
         }
     }
-    
+
+}
+
+@mixin h2ComponentAccordionVersion($componentVersion: 0, $focus-color, $accordion-alternating-background-color) {
+    @if $componentVersion != 0 {
+        [data-h2-enabled="accordion, #{$componentVersion}"] {
+            @include h2ComponentAccordion($focus-color, $accordion-alternating-background-color);
+        }
+    } @else {
+        [data-h2-enabled]{
+            @include h2ComponentAccordion($focus-color, $accordion-alternating-background-color);
+        }
+    }
 }

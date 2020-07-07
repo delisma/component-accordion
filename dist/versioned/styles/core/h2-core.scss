@@ -1,0 +1,4 @@
+@forward "defaults";
+@use "defaults" as *;
+@use "core" as *;
+@include h2Core($componentVersion: 0);

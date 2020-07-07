@@ -1,0 +1,152 @@
+// Hydrogen / Components / Accordion
+
+@mixin h2ComponentAccordion($focus-color, $accordion-alternating-background-color) {
+
+    // Generic Styles
+    [data-h2-accordion] {
+
+        // Trigger
+        [data-h2-accordion-trigger] {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            width: 100%;
+
+            // Accessibility Label
+            [data-h2-accordion-trigger-label] {
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: -100vw;
+                width: 1px;
+            }
+
+            // Trigger Icons
+            [data-h2-accordion-add-icon] {
+                display: block;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                width: 1rem;
+            }
+            [data-h2-accordion-remove-icon] {
+                display: none;
+                position: absolute;
+                top: 50%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+                width: 1rem;
+            }
+
+        }
+
+        // Content
+        [data-h2-accordion-content] {
+            display: none;
+        }
+
+        // Active/Open State
+        &.hds-active {
+
+            // Trigger
+            [data-h2-accordion-trigger] {
+
+                // Trigger Icons
+                [data-h2-accordion-add-icon] {
+                    display: none;
+                }
+                [data-h2-accordion-remove-icon] {
+                    display: block;
+                }
+
+            }
+
+            // Content
+            [data-h2-accordion-content] {
+                display: block;
+            }
+
+        }
+
+        // Focused State
+        [data-h2-accordion-trigger]:focus {
+            outline: $focus-color solid 3px;
+        }
+    }
+
+    // Right Orientation
+    [data-h2-accordion="right"] {
+
+        // Trigger
+        [data-h2-accordion-trigger] {
+            padding-right: 5rem;
+
+            // Trigger Icons
+            [data-h2-accordion-add-icon] {
+                right: 2.5rem;
+            }
+            [data-h2-accordion-remove-icon] {
+                right: 2.5rem;
+            }
+
+        }
+
+    }
+
+    // Left Orientation
+    [data-h2-accordion="left"] {
+
+        // Trigger
+        [data-h2-accordion-trigger] {
+            padding-left: 5rem;
+
+            // Trigger Icons
+            [data-h2-accordion-add-icon] {
+                left: 2.5rem;
+            }
+            [data-h2-accordion-remove-icon] {
+                left: 2.5rem;
+            }
+
+        }
+
+        // Content
+        [data-h2-accordion-content] {
+            padding-left: 5rem;
+        }
+
+    }
+
+    // Group w/ Alternating Backgrounds
+    [data-h2-accordion-group="odd"] {
+        [data-h2-accordion] {
+            &:nth-child(odd) {
+                background: $accordion-alternating-background-color;
+            }
+        }
+    }
+    [data-h2-accordion-group="even"] {
+        [data-h2-accordion] {
+            &:nth-child(even) {
+                background: $accordion-alternating-background-color;
+            }
+        }
+    }
+
+}
+
+@mixin h2ComponentAccordionVersion($componentVersion: 0, $focus-color, $accordion-alternating-background-color) {
+    @if $componentVersion != 0 {
+        [data-h2-enabled="accordion, #{$componentVersion}"] {
+            @include h2ComponentAccordion($focus-color, $accordion-alternating-background-color);
+        }
+    } @else {
+        [data-h2-enabled]{
+            @include h2ComponentAccordion($focus-color, $accordion-alternating-background-color);
+        }
+    }
+}
