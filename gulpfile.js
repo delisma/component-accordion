@@ -19,7 +19,7 @@ const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 // Version
-const version = "0.0.1";
+const version = "0-0-1";
 
 // Test Scripts
 

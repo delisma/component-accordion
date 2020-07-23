@@ -12,6 +12,13 @@
     min-height: 100vh;
     position: relative;
     width: 100%;
+    // IE 11 Hover Support
+    &[id*="Trident/7.0"] {
+        a:hover {
+            color: $hover-font-color !important;
+            transition: color .2s ease;
+        }
+    }
 }
 
 // Universal Style Reset
@@ -136,14 +143,6 @@
         }
     }
 
-        // IE 11 Hover Support
-        &[id*="Trident/7.0"] {
-            a:hover {
-                color: $hover-font-color !important;
-                transition: color .2s ease;
-            }
-        }
-
     // Lists
     ul,
     ol {
@@ -163,25 +162,4 @@
         }
     }
 
-}
-
-@mixin h2Core($component, $componentVersion: 0) {
-    @if $componentVersion != 0 {
-        [data-h2-enabled="#{$component}, #{$componentVersion}"] {
-            @include h2BodyStyle;
-        }
-    } @else {
-        [data-h2-enabled]{
-            @include h2BodyStyle;
-        }
-    }
-    @if $componentVersion != 0 {
-        [data-h2-enabled="#{$component}, #{$componentVersion}"] {
-            @include h2UniversalReset;
-        }
-    } @else {
-        [data-h2-enabled]{
-            @include h2UniversalReset;
-        }
-    }
 }

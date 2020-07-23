@@ -5,6 +5,17 @@
 @use "core/core" as core;
 @use "component-accordion" as *;
 
-// Note: $H2VER is replaced during the build script with the current component version, set in Gulpfile.js
-@include core.h2Core($component: "accordion", $componentVersion: "$H2VER");
-@include h2ComponentAccordionVersion($componentVersion: "$H2VER", $focus-color: var.$focus-color, $accordion-alternating-background-color: var.$accordion-alternating-background-color);
+// Note: $H2VER is replaced during the build script with the current component version, set in Gulpfile.js, before Sass is compiled.
+[data-h2-accordion-$H2VER] {
+    @include h2ComponentAccordionReset($default-font-size: var.$default-font-size);
+    @include core.h2UniversalReset;
+    @include h2ComponentAccordionGeneric($focus-color: var.$focus-color);
+}
+
+[data-h2-accordion-$H2VER="right"] {
+    @include h2ComponentAccordionRight;
+}
+
+[data-h2-accordion-$H2VER="left"] {
+    @include h2ComponentAccordionLeft;
+}

@@ -1,4 +1,9 @@
 @forward "defaults";
 @use "defaults" as *;
 @use "core" as *;
-@include h2Core($componentVersion: 0);
+body[data-h2-enabled] {
+    @include h2BodyStyle;
+}
+[data-h2-enabled] {
+    @include h2UniversalReset;
+}

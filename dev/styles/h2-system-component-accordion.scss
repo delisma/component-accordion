@@ -4,4 +4,14 @@
 @use "./node_modules/@hydrogen-design-system/core/dist/styles/defaults" as var;
 @use "component-accordion" as *;
 
-@include h2ComponentAccordionVersion($component: "accordion", $componentVersion: 0, $focus-color: var.$focus-color, $accordion-alternating-background-color: var.$accordion-alternating-background-color);
+[data-h2-accordion] {
+    @include h2ComponentAccordionGeneric($focus-color: var.$focus-color);
+}
+
+[data-h2-accordion="right"] {
+    @include h2ComponentAccordionRight;
+}
+
+[data-h2-accordion="left"] {
+    @include h2ComponentAccordionLeft;
+}

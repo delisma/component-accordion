@@ -2,11 +2,11 @@
     <head>
         <link async rel="stylesheet" href="styles/h2-component-accordion.css">
     </head>
-    <body data-h2-enabled="accordion, $H2VER">
+    <body>
         <div style="padding: 5rem 0 5rem 0; margin: 0 auto; max-width: 60rem; width: 90%">
             <h1>Single Accordions</h1>
             <h2>Right Accordion</h2>
-            <div data-h2-accordion="right">
+            <div data-h2-accordion-$H2VER="right">
                 <button 
                     aria-expanded="false" 
                     data-h2-accordion-trigger 
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <h2>Left Accordion</h2>
-            <div data-h2-accordion="left">
+            <div data-h2-accordion-$H2VER="left">
                 <button 
                     aria-expanded="false" 
                     data-h2-accordion-trigger 
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <h2>JS Disabled Accordion</h2>
-            <div data-h2-accordion="left" data-h2-disabled>
+            <div data-h2-accordion-$H2VER="left" data-h2-disabled>
                 <button 
                     aria-expanded="false" 
                     data-h2-accordion-trigger 
@@ -78,205 +78,6 @@
                     aria-hidden="true" 
                     data-h2-accordion-content>
                     <p>Accordion Content</p>
-                </div>
-            </div>
-            <h1>Groups of Accordions</h1>
-            <h2>Odd Group of Accordions</h2>
-            <div data-h2-accordion-group="odd">
-                <div data-h2-accordion="left">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-                <div data-h2-accordion="left">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-                <div data-h2-accordion="left">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-                <div data-h2-accordion="left">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-            </div>
-            <h2>Even Group of Accordions</h2>
-            <div data-h2-accordion-group="even">
-                <div data-h2-accordion="right">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-                <div data-h2-accordion="right">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-                <div data-h2-accordion="right">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
-                </div>
-                <div data-h2-accordion="right">
-                    <button 
-                        aria-expanded="false" 
-                        data-h2-accordion-trigger 
-                        tabindex="0" 
-                        type="button">
-                        <span data-h2-accordion-trigger-label>Click to view...</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-add-icon>+</span>
-                        <span 
-                            aria-hidden="true" 
-                            data-h2-accordion-remove-icon>-</span>
-                        <div>
-                            <p>Accordion Title</p>
-                            <span>Accordion Subtitle</span>
-                        </div>
-                    </button>
-                    <div 
-                        aria-hidden="true" 
-                        data-h2-accordion-content>
-                        <p>Accordion Content</p>
-                    </div>
                 </div>
             </div>
         </div>
