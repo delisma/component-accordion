@@ -1,1 +1,1 @@
-console.log("Component/Accordion is here!");
+console.log("This is the Hydrogen accordion component.");

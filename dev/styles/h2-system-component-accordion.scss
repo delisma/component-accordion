@@ -1,17 +1,28 @@
-// Hydrogen / Components / Accordion
+// Hydrogen / Components / Accordion (System)
+// This file is processed and then imported into @hydrogen-design-system/system
 
+// Unlike the versioned copy, this stylesheet doesn't require Hydrogen's core because the core is imported by the system itself in that repository later on.
+
+// Forward theme variables from the core module first so that they can be accessed and modified.
 @forward "./node_modules/@hydrogen-design-system/core/dist/styles/defaults";
+
+// Load theme variables from the core module so that they can be passed to the component mixins.
 @use "./node_modules/@hydrogen-design-system/core/dist/styles/defaults" as var;
+
+// Load the component so that its mixins can be accessed.
 @use "component-accordion" as *;
 
+// Load the generic accordion mixin with its respective theme variables.
 [data-h2-accordion] {
     @include h2ComponentAccordionGeneric($focus-color: var.$focus-color);
 }
 
+// Load the right-aligned accordion mixin with its respective theme variables.
 [data-h2-accordion="right"] {
     @include h2ComponentAccordionRight;
 }
 
+// Load the left-aligned accordion mixin with its respective theme variables.
 [data-h2-accordion="left"] {
     @include h2ComponentAccordionLeft;
 }
