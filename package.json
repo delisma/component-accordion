@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/hydrogen-design-system/component-accordion#readme",
   "dependencies": {
-    "@hydrogen-design-system/core": "0.0.7"
+    "@hydrogen-design-system/core": "0.0.9"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",

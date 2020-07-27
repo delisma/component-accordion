@@ -19,7 +19,7 @@
 // 0-0-1 is replaced during the Gulp build script with the current component version, set in Gulpfile.js, before Sass is compiled.
 [data-h2-accordion-0-0-1] {
     // Load the component's unique reset styles.
-    @include h2ComponentAccordionReset($default-font-size: var.$default-font-size);
+    @include h2ComponentAccordionReset($font-scale-default: var.$font-scale-default);
     // Load the core.
     @include core.h2UniversalReset;
     // Load the generic component mixin.

@@ -35,18 +35,18 @@ $color-map: (
     "go": $go,
     "slow": $slow,
     "stop": $stop,
-    "c1": $c1,
-    "c2": $c2,
-    "c3": $c3,
-    "c4": $c4,
-    "c5": $c5
+    "c1": $theme-color-1,
+    "c2": $theme-color-2,
+    "c3": $theme-color-3,
+    "c4": $theme-color-4,
+    "c5": $theme-color-5
 );
 
 // Containers
 $container-size-map: (
-    "small": $small-layout,
-    "medium": $medium-layout,
-    "large": $large-layout,
+    "small": $layout-small,
+    "medium": $layout-medium,
+    "large": $layout-large,
     "full": none
 );
 
@@ -69,7 +69,7 @@ $font-size-map: (
     "h4": $font-scale-h4,
     "h5": $font-scale-h5,
     "h6": $font-scale-h6,
-    "normal": $default-font-size,
+    "normal": $font-scale-default,
     "small": $font-scale-small,
 );
 
@@ -87,14 +87,10 @@ $grid-equality-map: (
 
 // Media
 $media-query-map: (
-    "base": "screen",
-    "pp": $phone-portrait,
-    "pl": $phone-landscape,
-    "tp": $tablet-portrait,
-    "tl": $tablet-landscape,
-    "ds": $desktop-small,
-    "dm": $desktop-medium,
-    "dl": $desktop-large,
+    "mqb": "screen",
+    "mqs": $mq-small,
+    "mqm": $mq-medium,
+    "mql": $mq-large
 );
 
 // Opacity
@@ -115,7 +111,7 @@ $position-list: ("absolute", "relative", "static", "fixed", "sticky");
 // Radius
 $radius-map: (
     "square": "0px",
-    "round": $border-radius-rounded,
+    "round": $border-radius-round,
     "pill": $border-radius-pill
 );
 

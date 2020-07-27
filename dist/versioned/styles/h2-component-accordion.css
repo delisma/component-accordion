@@ -50,7 +50,7 @@
   }
 }
 [data-h2-accordion-0-0-1] h1, [data-h2-accordion-0-0-1] h2, [data-h2-accordion-0-0-1] h3, [data-h2-accordion-0-0-1] h4, [data-h2-accordion-0-0-1] h5, [data-h2-accordion-0-0-1] h6, [data-h2-accordion-0-0-1] p {
-  font-family: "Open Sans", sans-serif;
+  font-family: sans-serif;
   font-weight: normal;
   margin: 0;
 }
@@ -109,7 +109,7 @@
 }
 [data-h2-accordion-0-0-1] ul,
 [data-h2-accordion-0-0-1] ol {
-  font-family: "Open Sans", sans-serif;
+  font-family: sans-serif;
   padding-left: calc(1.25vw * 2);
 }
 [data-h2-accordion-0-0-1] ul li,

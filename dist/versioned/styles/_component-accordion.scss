@@ -1,7 +1,7 @@
 // Hydrogen / Components / Accordion
 
-@mixin h2ComponentAccordionReset($default-font-size) {
-    font-size: $default-font-size
+@mixin h2ComponentAccordionReset($font-scale-default) {
+    font-size: $font-scale-default
 }
 
 @mixin h2ComponentAccordionGeneric($focus-color) {
