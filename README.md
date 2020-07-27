@@ -25,3 +25,10 @@ To contribute:
 - `git clone` this repository
 - `npm install`
 - `npm run test`
+
+### Important Commands
+- `npm run test`
+  - builds the versioned instance of the component and opens the test file in your browser with browser-sync running so that you can moderate your changes
+- `npm run build`
+  - runs the build command to process all files for production
+  - this will automatically build the system and instanced versions of the component
