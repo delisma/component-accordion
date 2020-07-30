@@ -1,9 +1,9 @@
 @forward "defaults";
 @use "defaults" as *;
 @use "core" as *;
-body[data-h2-enabled] {
+body[data-h2] {
     @include h2BodyStyle;
 }
-[data-h2-enabled] {
+[data-h2] {
     @include h2UniversalReset;
 }
