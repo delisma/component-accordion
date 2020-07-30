@@ -2,7 +2,7 @@
 // Hydrogen / Components / Accordion
 
 var env = "versioned";
-var version = "0-0-2";
+var version = "0-0-3";
 
 function accordionTrigger(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
