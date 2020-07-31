@@ -1,6 +1,18 @@
 // Hydrogen / Components / Accordion (System)
 // This file is processed and then imported into @hydrogen-design-system/system
 
+// File paths must respect how the system's architecture works.
+// - root
+//   - core
+//     - styles
+//   - properties
+//     - styles
+//     - individual properties
+//       - styles
+//   - components
+//     - individual components
+//       - [you're here]
+
 // Unlike the versioned copy, this stylesheet doesn't require Hydrogen's core because the core is imported by the system itself in that repository later on.
 
 // Forward theme variables from the core module first so that they can be accessed and modified.

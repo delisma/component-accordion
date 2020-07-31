@@ -19,7 +19,7 @@ const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 // Version
-const version = "0-0-3";
+const version = "0-0-4";
 
 // Test Scripts
 
@@ -104,8 +104,6 @@ const version = "0-0-3";
         // System: Concatenated, Raw
         function concatSystemScripts() {
             return src([
-                // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
                 // Component
                 'dev/scripts/h2-component-accordion.js'
             ])
@@ -118,8 +116,6 @@ const version = "0-0-3";
         // System: Concatenated, Uglified
         function uglifySystemScripts() {
             return src([
-                // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
                 // Component
                 'dev/scripts/h2-component-accordion.js'
             ])
@@ -136,8 +132,6 @@ const version = "0-0-3";
         // System: Concatenated, Uglified, GZipped
         function gzipSystemScripts() {
             return src([
-                // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
                 // Component
                 'dev/scripts/h2-component-accordion.js'
             ])
