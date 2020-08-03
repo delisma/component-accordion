@@ -1,8 +1,17 @@
 // Hydrogen / Components / Accordion
 
-var env = "system";
-var version = "0-0-6";
+// "hasAttr" Function
+$.fn.h2ComAccHasAttr = function (name) {
+    var attr = $(this).attr(name);
+    return (typeof attr !== typeof undefined && attr !== false);
+};
 
+// Focusable Items
+function h2ComAccFocusable(focusElement) {
+    return (focusElement.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+}
+
+// Accordion Open/Close
 function accordionTrigger(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
     if ($(trigger).parent(accordion).hasClass("h2-active")) {
@@ -14,7 +23,7 @@ function accordionTrigger(trigger, accordion) {
         $(trigger).parent(accordion).addClass("h2-active");
         $(trigger).parent(accordion).find(content).attr("aria-hidden", "false");
         var siblingContent = $(trigger).siblings(content);
-        var focusableItems = focusable(siblingContent);
+        var focusableItems = h2ComAccFocusable(siblingContent);
         var firstFocusableItem = $(focusableItems).first();
         if (focusableItems.length != 0) {
             firstFocusableItem[0].focus();
@@ -22,27 +31,15 @@ function accordionTrigger(trigger, accordion) {
     }
 }
 
+// Accordion Trigger
 $(document).ready(function () {
     $(document).on("click", "[data-h2-accordion-trigger]", function (e) {
         e.preventDefault();
-        if (env == "system") {
-            if ($(this).parent("[data-h2-accordion]").hasAttr("data-h2-no-js") == true) {
-                // Do nothing.
-                // console.log("system, but disabled");
-            } else {
-                // console.log("system, enabled");
-                var accordion = "[data-h2-accordion]";
-                accordionTrigger(this, accordion);
-            }
-        } else if (env == "versioned") {
-            if ($(this).parent("[data-h2-accordion-" + version + "]").hasAttr("data-h2-no-js") == true) {
-                // Do nothing.
-                // console.log("versioned, but disabled");
-            } else {
-                // console.log("versioned, working properly");
-                var accordion = "[data-h2-accordion-" + version + "]";
-                accordionTrigger(this, accordion);
-            }
+        if ($(this).parent("[data-h2-accordion]").h2ComAccHasAttr("data-h2-no-js") == true) {
+            // Do nothing.
+        } else {
+            var accordion = "[data-h2-accordion]";
+            accordionTrigger(this, accordion);
         }
     });
 });

@@ -19,7 +19,8 @@ const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 // Version
-const version = "0-0-6";
+const verCSS = "0-0-7";
+const verJS = verCSS.replace("-", "").replace("-", "");
 
 // Test Scripts
 
@@ -32,8 +33,8 @@ const version = "0-0-6";
             'dev/scripts/h2-component-accordion.js'
         ])
         .pipe(concat('h2-component-accordion.js'))
-        .pipe(replace('$H2ENV', "versioned"))
-        .pipe(replace('$H2VER', version))
+        .pipe(replace('$H2VERCSS', "-" + verCSS))
+        .pipe(replace('$H2VERJS', verJS))
         .pipe(dest('tests/cache/scripts'));
     }
 
@@ -48,7 +49,7 @@ const version = "0-0-6";
     }
     function moveVersionedComponentTestSass() {
         return src('dev/styles/h2-versioned-component-accordion.scss')
-        .pipe(replace('$H2VER', version))
+        .pipe(replace('$H2VER', verCSS))
         .pipe(rename(function(path) {
             path.basename = "h2-component-accordion";
         }))
@@ -64,7 +65,7 @@ const version = "0-0-6";
     // Move HTML
     function moveTestHTML() {
         return src('tests/index.html')
-        .pipe(replace('$H2VER', version))
+        .pipe(replace('$H2VER', verCSS))
         .pipe(dest('tests/cache'));
     }
 
@@ -108,8 +109,8 @@ const version = "0-0-6";
                 'dev/scripts/h2-component-accordion.js'
             ])
             .pipe(concat('h2-component-accordion.js'))
-            .pipe(replace('$H2ENV', "system"))
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VERCSS', ""))
+            .pipe(replace('$H2VERJS', ""))
             .pipe(dest('dist/system/scripts'));
         }
 
@@ -120,8 +121,8 @@ const version = "0-0-6";
                 'dev/scripts/h2-component-accordion.js'
             ])
             .pipe(concat('h2-component-accordion.js'))
-            .pipe(replace('$H2ENV', "system"))
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VERCSS', ""))
+            .pipe(replace('$H2VERJS', ""))
             .pipe(uglify())
             .pipe(rename(function(path) {
                 path.extname = ".min.js";
@@ -136,8 +137,8 @@ const version = "0-0-6";
                 'dev/scripts/h2-component-accordion.js'
             ])
             .pipe(concat('h2-component-accordion.js'))
-            .pipe(replace('$H2ENV', "system"))
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VERCSS', ""))
+            .pipe(replace('$H2VERJS', ""))
             .pipe(uglify())
             .pipe(rename(function(path) {
                 path.extname = ".min.js";
@@ -155,8 +156,8 @@ const version = "0-0-6";
                 'dev/scripts/h2-component-accordion.js'
             ])
             .pipe(concat('h2-component-accordion.js'))
-            .pipe(replace('$H2ENV', "versioned"))
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VERCSS', "-" + verCSS))
+            .pipe(replace('$H2VERJS', verJS))
             .pipe(dest('dist/versioned/scripts'));
         }
 
@@ -169,8 +170,8 @@ const version = "0-0-6";
                 'dev/scripts/h2-component-accordion.js'
             ])
             .pipe(concat('h2-component-accordion.js'))
-            .pipe(replace('$H2ENV', "versioned"))
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VERCSS', "-" + verCSS))
+            .pipe(replace('$H2VERJS', verJS))
             .pipe(uglify())
             .pipe(rename(function(path) {
                 path.extname = ".min.js";
@@ -187,8 +188,8 @@ const version = "0-0-6";
                 'dev/scripts/h2-component-accordion.js'
             ])
             .pipe(concat('h2-component-accordion.js'))
-            .pipe(replace('$H2ENV', "versioned"))
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VERCSS', "-" + verCSS))
+            .pipe(replace('$H2VERJS', verJS))
             .pipe(uglify())
             .pipe(rename(function(path) {
                 path.extname = ".min.js";
@@ -221,7 +222,7 @@ const version = "0-0-6";
         }
         function moveVersionedComponentSass() {
             return src('dev/styles/h2-versioned-component-accordion.scss')
-            .pipe(replace('$H2VER', version))
+            .pipe(replace('$H2VER', verCSS))
             .pipe(rename(function(path) {
                 path.basename = "h2-component-accordion";
             }))
