@@ -1,99 +1,99 @@
-[data-h2-accordion-0-0-5] {
+[data-h2-accordion-0-0-6] {
   font-size: 1rem;
 }
-[data-h2-accordion-0-0-5] * {
+[data-h2-accordion-0-0-6] * {
   box-sizing: border-box;
   line-height: 1.5;
 }
-[data-h2-accordion-0-0-5] ::-moz-selection {
+[data-h2-accordion-0-0-6] ::-moz-selection {
   background: #F7AF5B !important;
   color: #0a0a14 !important;
 }
-[data-h2-accordion-0-0-5] ::selection {
+[data-h2-accordion-0-0-6] ::selection {
   background: #F7AF5B !important;
   color: #0a0a14 !important;
 }
-[data-h2-accordion-0-0-5] blockquote,
-[data-h2-accordion-0-0-5] dl,
-[data-h2-accordion-0-0-5] fieldset,
-[data-h2-accordion-0-0-5] figure {
+[data-h2-accordion-0-0-6] blockquote,
+[data-h2-accordion-0-0-6] dl,
+[data-h2-accordion-0-0-6] fieldset,
+[data-h2-accordion-0-0-6] figure {
   margin: 0;
 }
-[data-h2-accordion-0-0-5] button {
+[data-h2-accordion-0-0-6] button {
   padding: 0;
 }
-[data-h2-accordion-0-0-5] fieldset {
+[data-h2-accordion-0-0-6] fieldset {
   padding: 0;
 }
-[data-h2-accordion-0-0-5] img,
-[data-h2-accordion-0-0-5] iframe {
+[data-h2-accordion-0-0-6] img,
+[data-h2-accordion-0-0-6] iframe {
   max-width: 100%;
 }
-[data-h2-accordion-0-0-5] .h2-active-block {
+[data-h2-accordion-0-0-6] .h2-active-block {
   display: block;
 }
-[data-h2-accordion-0-0-5] .h2-active-inline {
+[data-h2-accordion-0-0-6] .h2-active-inline {
   display: inline;
 }
-[data-h2-accordion-0-0-5] .h2-active-inline-block {
+[data-h2-accordion-0-0-6] .h2-active-inline-block {
   display: inline-block;
 }
-[data-h2-accordion-0-0-5] .h2-hidden {
+[data-h2-accordion-0-0-6] .h2-hidden {
   display: none;
 }
-[data-h2-accordion-0-0-5] .h2-mobile-lock {
+[data-h2-accordion-0-0-6] .h2-mobile-lock {
   overflow: hidden;
 }
 @media screen and (min-width: 64em) {
-  [data-h2-accordion-0-0-5] .h2-mobile-lock {
+  [data-h2-accordion-0-0-6] .h2-mobile-lock {
     overflow: visible;
   }
 }
-[data-h2-accordion-0-0-5] h1, [data-h2-accordion-0-0-5] h2, [data-h2-accordion-0-0-5] h3, [data-h2-accordion-0-0-5] h4, [data-h2-accordion-0-0-5] h5, [data-h2-accordion-0-0-5] h6, [data-h2-accordion-0-0-5] p {
+[data-h2-accordion-0-0-6] h1, [data-h2-accordion-0-0-6] h2, [data-h2-accordion-0-0-6] h3, [data-h2-accordion-0-0-6] h4, [data-h2-accordion-0-0-6] h5, [data-h2-accordion-0-0-6] h6, [data-h2-accordion-0-0-6] p {
   font-family: sans-serif;
   font-weight: normal;
   margin: 0;
 }
-[data-h2-accordion-0-0-5] h1 {
+[data-h2-accordion-0-0-6] h1 {
   font-size: calc(calc(calc(calc(calc(1rem*(1.333))*(1.333))*(1.333))*(1.333))*(1.333));
 }
-[data-h2-accordion-0-0-5] h2 {
+[data-h2-accordion-0-0-6] h2 {
   font-size: calc(calc(calc(calc(1rem*(1.333))*(1.333))*(1.333))*(1.333));
 }
-[data-h2-accordion-0-0-5] h3 {
+[data-h2-accordion-0-0-6] h3 {
   font-size: calc(calc(calc(1rem*(1.333))*(1.333))*(1.333));
 }
-[data-h2-accordion-0-0-5] h4 {
+[data-h2-accordion-0-0-6] h4 {
   font-size: calc(calc(1rem*(1.333))*(1.333));
 }
-[data-h2-accordion-0-0-5] h5 {
+[data-h2-accordion-0-0-6] h5 {
   font-size: calc(1rem*(1.333));
 }
-[data-h2-accordion-0-0-5] h6 {
+[data-h2-accordion-0-0-6] h6 {
   font-size: 1rem;
 }
-[data-h2-accordion-0-0-5] p, [data-h2-accordion-0-0-5] div {
+[data-h2-accordion-0-0-6] p, [data-h2-accordion-0-0-6] div {
   font-size: 1rem;
 }
-[data-h2-accordion-0-0-5] span {
+[data-h2-accordion-0-0-6] span {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
-[data-h2-accordion-0-0-5] em {
+[data-h2-accordion-0-0-6] em {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   font-style: italic;
 }
-[data-h2-accordion-0-0-5] strong {
+[data-h2-accordion-0-0-6] strong {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   font-weight: 600;
 }
-[data-h2-accordion-0-0-5] a {
+[data-h2-accordion-0-0-6] a {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -102,40 +102,40 @@
   transition: color 0.2s ease;
 }
 @media (hover: hover) {
-  [data-h2-accordion-0-0-5] a:hover {
+  [data-h2-accordion-0-0-6] a:hover {
     color: #F79559 !important;
     transition: color 0.2s ease;
   }
 }
-[data-h2-accordion-0-0-5] ul,
-[data-h2-accordion-0-0-5] ol {
+[data-h2-accordion-0-0-6] ul,
+[data-h2-accordion-0-0-6] ol {
   font-family: sans-serif;
   padding-left: calc(1.25vw * 2);
 }
-[data-h2-accordion-0-0-5] ul li,
-[data-h2-accordion-0-0-5] ol li {
+[data-h2-accordion-0-0-6] ul li,
+[data-h2-accordion-0-0-6] ol li {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   margin-bottom: calc(1.25vw / 2);
 }
-[data-h2-accordion-0-0-5] ul li:last-child,
-[data-h2-accordion-0-0-5] ol li:last-child {
+[data-h2-accordion-0-0-6] ul li:last-child,
+[data-h2-accordion-0-0-6] ol li:last-child {
   margin-bottom: 0;
 }
-[data-h2-accordion-0-0-5] ul li > ul,
-[data-h2-accordion-0-0-5] ol li > ul {
+[data-h2-accordion-0-0-6] ul li > ul,
+[data-h2-accordion-0-0-6] ol li > ul {
   margin-top: calc(1.25vw / 2);
 }
-[data-h2-accordion-0-0-5] [data-h2-accordion-trigger] {
-  background: none;
+[data-h2-accordion-0-0-6] [data-h2-accordion-trigger] {
+  background: blue;
   border: none;
   cursor: pointer;
   position: relative;
   text-align: left;
   width: 100%;
 }
-[data-h2-accordion-0-0-5] [data-h2-accordion-trigger] [data-h2-accordion-trigger-label] {
+[data-h2-accordion-0-0-6] [data-h2-accordion-trigger] [data-h2-accordion-trigger-label] {
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -143,7 +143,7 @@
   left: -100vw;
   width: 1px;
 }
-[data-h2-accordion-0-0-5] [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
+[data-h2-accordion-0-0-6] [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
   display: block;
   position: absolute;
   top: 50%;
@@ -151,7 +151,7 @@
   transform: translate(-50%, -50%);
   width: 1rem;
 }
-[data-h2-accordion-0-0-5] [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
+[data-h2-accordion-0-0-6] [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
   display: none;
   position: absolute;
   top: 50%;
@@ -159,41 +159,41 @@
   transform: translate(-50%, -50%);
   width: 1rem;
 }
-[data-h2-accordion-0-0-5] [data-h2-accordion-content] {
+[data-h2-accordion-0-0-6] [data-h2-accordion-content] {
   display: none;
 }
-[data-h2-accordion-0-0-5].h2-active [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
+[data-h2-accordion-0-0-6].h2-active [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
   display: none;
 }
-[data-h2-accordion-0-0-5].h2-active [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
+[data-h2-accordion-0-0-6].h2-active [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
   display: block;
 }
-[data-h2-accordion-0-0-5].h2-active [data-h2-accordion-content] {
+[data-h2-accordion-0-0-6].h2-active [data-h2-accordion-content] {
   display: block;
 }
-[data-h2-accordion-0-0-5] [data-h2-accordion-trigger]:focus {
+[data-h2-accordion-0-0-6] [data-h2-accordion-trigger]:focus {
   outline: #F14948 solid 3px;
 }
 
-[data-h2-accordion-0-0-5=right] [data-h2-accordion-trigger] {
+[data-h2-accordion-0-0-6=right] [data-h2-accordion-trigger] {
   padding-right: 5rem;
 }
-[data-h2-accordion-0-0-5=right] [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
+[data-h2-accordion-0-0-6=right] [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
   right: 2.5rem;
 }
-[data-h2-accordion-0-0-5=right] [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
+[data-h2-accordion-0-0-6=right] [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
   right: 2.5rem;
 }
 
-[data-h2-accordion-0-0-5=left] [data-h2-accordion-trigger] {
+[data-h2-accordion-0-0-6=left] [data-h2-accordion-trigger] {
   padding-left: 5rem;
 }
-[data-h2-accordion-0-0-5=left] [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
+[data-h2-accordion-0-0-6=left] [data-h2-accordion-trigger] [data-h2-accordion-add-icon] {
   left: 2.5rem;
 }
-[data-h2-accordion-0-0-5=left] [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
+[data-h2-accordion-0-0-6=left] [data-h2-accordion-trigger] [data-h2-accordion-remove-icon] {
   left: 2.5rem;
 }
-[data-h2-accordion-0-0-5=left] [data-h2-accordion-content] {
+[data-h2-accordion-0-0-6=left] [data-h2-accordion-content] {
   padding-left: 5rem;
 }
