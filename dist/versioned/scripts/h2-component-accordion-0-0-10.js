@@ -2,18 +2,18 @@
 // Hydrogen / Components / Accordion
 
 // "hasAttr" Function
-$.fn.h2ComAccHasAttr009 = function (name) {
+$.fn.h2ComAccHasAttr0010 = function (name) {
     var attr = $(this).attr(name);
     return (typeof attr !== typeof undefined && attr !== false);
 };
 
 // Focusable Items
-function h2ComAccFocusable009(focusElement) {
+function h2ComAccFocusable0010(focusElement) {
     return (focusElement.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
 }
 
 // Accordion Open/Close
-function accordionTrigger009(trigger, accordion) {
+function accordionTrigger0010(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
     if ($(trigger).parents(accordion).hasClass("h2-active")) {
         $(trigger).attr("aria-expanded", "false");
@@ -24,7 +24,7 @@ function accordionTrigger009(trigger, accordion) {
         $(trigger).parents(accordion).addClass("h2-active");
         $(trigger).parents(accordion).find(content).attr("aria-hidden", "false");
         var siblingContent = $(trigger).siblings(content);
-        var focusableItems = h2ComAccFocusable009(siblingContent);
+        var focusableItems = h2ComAccFocusable0010(siblingContent);
         var firstFocusableItem = $(focusableItems).first();
         if (focusableItems.length != 0) {
             firstFocusableItem[0].focus();
@@ -34,13 +34,13 @@ function accordionTrigger009(trigger, accordion) {
 
 // Accordion Trigger
 $(document).ready(function () {
-    $(document).on("click", "[data-h2-accordion-0-0-9] [data-h2-accordion-trigger]", function (e) {
+    $(document).on("click", "[data-h2-accordion-0-0-10] [data-h2-accordion-trigger]", function (e) {
         e.preventDefault();
-        if ($(this).parents("[data-h2-accordion-0-0-9]").h2ComAccHasAttr009("data-h2-no-js") == true) {
+        if ($(this).parents("[data-h2-accordion-0-0-10]").h2ComAccHasAttr0010("data-h2-no-js") == true) {
             // Do nothing.
         } else {
-            var accordion = "[data-h2-accordion-0-0-9]";
-            accordionTrigger009(this, accordion);
+            var accordion = "[data-h2-accordion-0-0-10]";
+            accordionTrigger0010(this, accordion);
         }
     });
 });
