@@ -14,14 +14,14 @@ function h2ComAccFocusable$H2VERJS(focusElement) {
 // Accordion Open/Close
 function accordionTrigger$H2VERJS(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
-    if ($(trigger).parent(accordion).hasClass("h2-active")) {
+    if ($(trigger).parents(accordion).hasClass("h2-active")) {
         $(trigger).attr("aria-expanded", "false");
-        $(trigger).parent(accordion).removeClass("h2-active");
-        $(trigger).parent(accordion).find(content).attr("aria-hidden", "true");
+        $(trigger).parents(accordion).removeClass("h2-active");
+        $(trigger).parents(accordion).find(content).attr("aria-hidden", "true");
     } else {
         $(trigger).attr("aria-expanded", "true");
-        $(trigger).parent(accordion).addClass("h2-active");
-        $(trigger).parent(accordion).find(content).attr("aria-hidden", "false");
+        $(trigger).parents(accordion).addClass("h2-active");
+        $(trigger).parents(accordion).find(content).attr("aria-hidden", "false");
         var siblingContent = $(trigger).siblings(content);
         var focusableItems = h2ComAccFocusable$H2VERJS(siblingContent);
         var firstFocusableItem = $(focusableItems).first();
@@ -33,9 +33,9 @@ function accordionTrigger$H2VERJS(trigger, accordion) {
 
 // Accordion Trigger
 $(document).ready(function () {
-    $(document).on("click", "[data-h2-accordion-trigger]", function (e) {
+    $(document).on("click", "[data-h2-accordion$H2VERCSS] [data-h2-accordion-trigger]", function (e) {
         e.preventDefault();
-        if ($(this).parent("[data-h2-accordion$H2VERCSS]").h2ComAccHasAttr$H2VERJS("data-h2-no-js") == true) {
+        if ($(this).parents("[data-h2-accordion$H2VERCSS]").h2ComAccHasAttr$H2VERJS("data-h2-no-js") == true) {
             // Do nothing.
         } else {
             var accordion = "[data-h2-accordion$H2VERCSS]";

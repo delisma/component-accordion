@@ -19,7 +19,7 @@ const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 // Version
-const verCSS = "0-0-8";
+const verCSS = "0-0-9";
 const verJS = verCSS.replace("-", "").replace("-", "");
 
 // Test Scripts
@@ -155,7 +155,7 @@ const verJS = verCSS.replace("-", "").replace("-", "");
                 // Component
                 'dev/scripts/h2-component-accordion.js'
             ])
-            .pipe(concat('h2-component-accordion.js'))
+            .pipe(concat('h2-component-accordion-' + verCSS + '.js'))
             .pipe(replace('$H2VERCSS', "-" + verCSS))
             .pipe(replace('$H2VERJS', verJS))
             .pipe(dest('dist/versioned/scripts'));
@@ -169,7 +169,7 @@ const verJS = verCSS.replace("-", "").replace("-", "");
                 // Component
                 'dev/scripts/h2-component-accordion.js'
             ])
-            .pipe(concat('h2-component-accordion.js'))
+            .pipe(concat('h2-component-accordion-' + verCSS + '.js'))
             .pipe(replace('$H2VERCSS', "-" + verCSS))
             .pipe(replace('$H2VERJS', verJS))
             .pipe(uglify())
@@ -187,7 +187,7 @@ const verJS = verCSS.replace("-", "").replace("-", "");
                 // Component
                 'dev/scripts/h2-component-accordion.js'
             ])
-            .pipe(concat('h2-component-accordion.js'))
+            .pipe(concat('h2-component-accordion-' + verCSS + '.js'))
             .pipe(replace('$H2VERCSS', "-" + verCSS))
             .pipe(replace('$H2VERJS', verJS))
             .pipe(uglify())
@@ -224,30 +224,30 @@ const verJS = verCSS.replace("-", "").replace("-", "");
             return src('dev/styles/h2-versioned-component-accordion.scss')
             .pipe(replace('$H2VER', verCSS))
             .pipe(rename(function(path) {
-                path.basename = "h2-component-accordion";
+                path.basename = "h2-component-accordion-" + verCSS;
             }))
             .pipe(dest('dist/versioned/styles'));
         }
 
         // Compiled, Raw
         function compileSass() {
-            return src('dist/versioned/styles/h2-component-accordion.scss')
+            return src('dist/versioned/styles/h2-component-accordion-' + verCSS + '.scss')
             .pipe(sass())
             .pipe(postcss([autoprefixer()]))
             .pipe(rename(function(path) {
-                path.basename = "h2-component-accordion";
+                path.basename = "h2-component-accordion-" + verCSS;
             }))
             .pipe(dest('dist/versioned/styles'));
         }
 
         // Compiled, Nanoed
         function nanoSass() {
-            return src('dist/versioned/styles/h2-component-accordion.scss')
+            return src('dist/versioned/styles/h2-component-accordion-' + verCSS + '.scss')
             .pipe(sass())
             .pipe(postcss([autoprefixer()]))
             .pipe(postcss([cssnano()]))
             .pipe(rename(function(path) {
-                path.basename = "h2-component-accordion";
+                path.basename = "h2-component-accordion-" + verCSS;
                 path.extname = ".min.css";
             }))
             .pipe(dest('dist/versioned/styles'));
@@ -255,12 +255,12 @@ const verJS = verCSS.replace("-", "").replace("-", "");
 
         // Compiled, Nanoed, GZipped
         function gzipSass() {
-            return src('dist/versioned/styles/h2-component-accordion.scss')
+            return src('dist/versioned/styles/h2-component-accordion-' + verCSS + '.scss')
             .pipe(sass())
             .pipe(postcss([autoprefixer()]))
             .pipe(postcss([cssnano()]))
             .pipe(rename(function(path) {
-                path.basename = "h2-component-accordion";
+                path.basename = "h2-component-accordion-" + verCSS;
                 path.extname = ".min.css";
             }))
             .pipe(gzip())
