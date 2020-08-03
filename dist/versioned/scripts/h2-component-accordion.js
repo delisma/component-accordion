@@ -2,18 +2,18 @@
 // Hydrogen / Components / Accordion
 
 // "hasAttr" Function
-$.fn.h2ComAccHasAttr007 = function (name) {
+$.fn.h2ComAccHasAttr008 = function (name) {
     var attr = $(this).attr(name);
     return (typeof attr !== typeof undefined && attr !== false);
 };
 
 // Focusable Items
-function h2ComAccFocusable007(focusElement) {
+function h2ComAccFocusable008(focusElement) {
     return (focusElement.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
 }
 
 // Accordion Open/Close
-function accordionTrigger007(trigger, accordion) {
+function accordionTrigger008(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
     if ($(trigger).parent(accordion).hasClass("h2-active")) {
         $(trigger).attr("aria-expanded", "false");
@@ -24,7 +24,7 @@ function accordionTrigger007(trigger, accordion) {
         $(trigger).parent(accordion).addClass("h2-active");
         $(trigger).parent(accordion).find(content).attr("aria-hidden", "false");
         var siblingContent = $(trigger).siblings(content);
-        var focusableItems = h2ComAccFocusable007(siblingContent);
+        var focusableItems = h2ComAccFocusable008(siblingContent);
         var firstFocusableItem = $(focusableItems).first();
         if (focusableItems.length != 0) {
             firstFocusableItem[0].focus();
@@ -36,11 +36,11 @@ function accordionTrigger007(trigger, accordion) {
 $(document).ready(function () {
     $(document).on("click", "[data-h2-accordion-trigger]", function (e) {
         e.preventDefault();
-        if ($(this).parent("[data-h2-accordion-0-0-7]").h2ComAccHasAttr007("data-h2-no-js") == true) {
+        if ($(this).parent("[data-h2-accordion-0-0-8]").h2ComAccHasAttr008("data-h2-no-js") == true) {
             // Do nothing.
         } else {
-            var accordion = "[data-h2-accordion-0-0-7]";
-            accordionTrigger007(this, accordion);
+            var accordion = "[data-h2-accordion-0-0-8]";
+            accordionTrigger008(this, accordion);
         }
     });
 });

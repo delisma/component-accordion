@@ -19,7 +19,7 @@ const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 // Version
-const verCSS = "0-0-7";
+const verCSS = "0-0-8";
 const verJS = verCSS.replace("-", "").replace("-", "");
 
 // Test Scripts
