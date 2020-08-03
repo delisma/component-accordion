@@ -19,22 +19,20 @@ const uglify = require('gulp-uglify');
 sass.compiler = require('sass');
 
 // Version
-const verCSS = "0-0-10";
+const verCSS = "0-0-11";
 const verJS = verCSS.replace("-", "").replace("-", "");
 
 // Test Scripts
 
-    // Concatenate and Move Scripts
-    function concatTestScripts() {
-        return src([
-            // Core
-            'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
-            // Component
-            'dev/scripts/h2-component-accordion.js'
-        ])
-        .pipe(concat('h2-component-accordion.js'))
+    // Move Scripts
+    function moveTestScript() {
+        return src(['dev/scripts/h2-component-accordion.js'])
         .pipe(replace('$H2VERCSS', "-" + verCSS))
         .pipe(replace('$H2VERJS', verJS))
+        .pipe(dest('tests/cache/scripts'));
+    }
+    function moveCash() {
+        return src(['node_modules/cash-dom/dist/cash.min.js'])
         .pipe(dest('tests/cache/scripts'));
     }
 
@@ -76,7 +74,7 @@ const verJS = verCSS.replace("-", "").replace("-", "");
 
     // Watch
     function watchTestFiles() {
-        watch(['dev/**/*', 'tests/*.html'], series(cleanCache, concatTestScripts, moveCoreTestSass, moveVersionedComponentStyleTestSass, moveVersionedComponentTestSass, compileTestSass, moveTestHTML, browserSyncReload));
+        watch(['dev/**/*', 'tests/*.html'], series(cleanCache, moveTestScript, moveCash, moveCoreTestSass, moveVersionedComponentStyleTestSass, moveVersionedComponentTestSass, compileTestSass, moveTestHTML, browserSyncReload));
     }
 
     // Browsersync
@@ -96,31 +94,23 @@ const verJS = verCSS.replace("-", "").replace("-", "");
     }
 
     // Default Task
-    exports.default = series(cleanCache, concatTestScripts, moveCoreTestSass, moveVersionedComponentStyleTestSass, moveVersionedComponentTestSass, compileTestSass, moveTestHTML, parallel(browserSync, watchTestFiles));
+    exports.default = series(cleanCache, moveTestScript, moveCash, moveCoreTestSass, moveVersionedComponentStyleTestSass, moveVersionedComponentTestSass, compileTestSass, moveTestHTML, parallel(browserSync, watchTestFiles));
 
 // Development Scripts
 
-    // Concatenate and Compress Scripts
+    // Compress Scripts
 
-        // System: Concatenated, Raw
-        function concatSystemScripts() {
-            return src([
-                // Component
-                'dev/scripts/h2-component-accordion.js'
-            ])
-            .pipe(concat('h2-component-accordion.js'))
+        // System: Raw
+        function prepSystemScripts() {
+            return src(['dev/scripts/h2-component-accordion.js'])
             .pipe(replace('$H2VERCSS', ""))
             .pipe(replace('$H2VERJS', ""))
             .pipe(dest('dist/system/scripts'));
         }
 
-        // System: Concatenated, Uglified
+        // System: Uglified
         function uglifySystemScripts() {
-            return src([
-                // Component
-                'dev/scripts/h2-component-accordion.js'
-            ])
-            .pipe(concat('h2-component-accordion.js'))
+            return src(['dev/scripts/h2-component-accordion.js'])
             .pipe(replace('$H2VERCSS', ""))
             .pipe(replace('$H2VERJS', ""))
             .pipe(uglify())
@@ -130,13 +120,9 @@ const verJS = verCSS.replace("-", "").replace("-", "");
             .pipe(dest('dist/system/scripts'));
         }
 
-        // System: Concatenated, Uglified, GZipped
+        // System: Uglified, GZipped
         function gzipSystemScripts() {
-            return src([
-                // Component
-                'dev/scripts/h2-component-accordion.js'
-            ])
-            .pipe(concat('h2-component-accordion.js'))
+            return src(['dev/scripts/h2-component-accordion.js'])
             .pipe(replace('$H2VERCSS', ""))
             .pipe(replace('$H2VERJS', ""))
             .pipe(uglify())
@@ -147,51 +133,38 @@ const verJS = verCSS.replace("-", "").replace("-", "");
             .pipe(dest('dist/system/scripts'));
         }
 
-        // Versioned: Concatenated, Raw
+        // Versioned: Raw
         function concatVersionedScripts() {
-            return src([
-                // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
-                // Component
-                'dev/scripts/h2-component-accordion.js'
-            ])
-            .pipe(concat('h2-component-accordion-' + verCSS + '.js'))
+            return src(['dev/scripts/h2-component-accordion.js'])
             .pipe(replace('$H2VERCSS', "-" + verCSS))
             .pipe(replace('$H2VERJS', verJS))
+            .pipe(rename(function(path) {
+                path.basename = "h2-component-accordion-" + verCSS;
+            }))
             .pipe(dest('dist/versioned/scripts'));
         }
 
-        // Versioned: Concatenated, Uglified
+        // Versioned: Uglified
         function uglifyVersionedScripts() {
-            return src([
-                // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
-                // Component
-                'dev/scripts/h2-component-accordion.js'
-            ])
-            .pipe(concat('h2-component-accordion-' + verCSS + '.js'))
+            return src(['dev/scripts/h2-component-accordion.js'])
             .pipe(replace('$H2VERCSS', "-" + verCSS))
             .pipe(replace('$H2VERJS', verJS))
             .pipe(uglify())
             .pipe(rename(function(path) {
+                path.basename = "h2-component-accordion-" + verCSS;
                 path.extname = ".min.js";
             }))
             .pipe(dest('dist/versioned/scripts'));
         }
 
-        // Versioned: Concatenated, Uglified, GZipped
+        // Versioned: Uglified, GZipped
         function gzipVersionedScripts() {
-            return src([
-                // Core
-                'node_modules/@hydrogen-design-system/core/dist/scripts/h2-core.min.js',
-                // Component
-                'dev/scripts/h2-component-accordion.js'
-            ])
-            .pipe(concat('h2-component-accordion-' + verCSS + '.js'))
+            return src(['dev/scripts/h2-component-accordion.js'])
             .pipe(replace('$H2VERCSS', "-" + verCSS))
             .pipe(replace('$H2VERJS', verJS))
             .pipe(uglify())
             .pipe(rename(function(path) {
+                path.basename = "h2-component-accordion-" + verCSS;
                 path.extname = ".min.js";
             }))
             .pipe(gzip())
@@ -275,4 +248,4 @@ const verJS = verCSS.replace("-", "").replace("-", "");
     // Exports
 
         // gulp build
-        exports.build = series(cleanDist, concatSystemScripts, uglifySystemScripts, gzipSystemScripts, concatVersionedScripts, uglifyVersionedScripts, gzipVersionedScripts, moveSystemComponentStyleSass, moveSystemComponentSass, moveCoreSass, moveVersionedComponentStyleSass, moveVersionedComponentSass, compileSass, nanoSass, gzipSass);
+        exports.build = series(cleanDist, prepSystemScripts, uglifySystemScripts, gzipSystemScripts, concatVersionedScripts, uglifyVersionedScripts, gzipVersionedScripts, moveSystemComponentStyleSass, moveSystemComponentSass, moveCoreSass, moveVersionedComponentStyleSass, moveVersionedComponentSass, compileSass, nanoSass, gzipSass);

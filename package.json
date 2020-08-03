@@ -1,6 +1,6 @@
 {
   "name": "@hydrogen-design-system/component-accordion",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Hydrogen's functional accordion component.",
   "main": "npm.js",
   "scripts": {
@@ -17,8 +17,11 @@
     "url": "https://github.com/hydrogen-design-system/component-accordion/issues"
   },
   "homepage": "https://github.com/hydrogen-design-system/component-accordion#readme",
+  "dependencies": {
+    "cash-dom": "^8.0.0"
+  },
   "devDependencies": {
-    "@hydrogen-design-system/core": "0.0.11",
+    "@hydrogen-design-system/core": "0.0.12",
     "autoprefixer": "^9.7.3",
     "browser-sync": "^2.26.7",
     "browserslist": "^4.8.2",
