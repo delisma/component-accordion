@@ -21,7 +21,7 @@ sass.compiler = require('sass');
 const component = "component-accordion";
 
 // Version
-const verCSS = "0-0-13";
+const verCSS = "0-0-14";
 const verJS = verCSS.replace("-", "").replace("-", "");
 
 // Development Tasks
