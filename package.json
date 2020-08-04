@@ -1,10 +1,10 @@
 {
   "name": "@hydrogen-design-system/component-accordion",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Hydrogen's functional accordion component.",
   "main": "npm.js",
   "scripts": {
-    "test": "npx gulp",
+    "dev": "npx gulp dev",
     "build": "npx gulp build"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "cash-dom": "^8.0.0"
   },
   "devDependencies": {
-    "@hydrogen-design-system/core": "0.0.12",
+    "@hydrogen-design-system/core": "0.0.14",
     "autoprefixer": "^9.7.3",
     "browser-sync": "^2.26.7",
     "browserslist": "^4.8.2",

@@ -2,6 +2,8 @@
 
 Hydrogen's components are built using [Gulp](https://gulpjs.com/), [Sass](https://sass-lang.com), [Autoprefixer](https://github.com/postcss/autoprefixer), and [CSSnano](https://cssnano.co/).
 
+Hydrogen components require [Cash](https://kenwheeler.github.io/cash/) to work properly. Cash is a lightweight jQuery alternative and will eventually be phased out of Hydrogen in favour of vanilla JavaScript.
+
 This component module contains the following in the `dist` folder:
 - the component's code that is imported by @hydrogen-design-system/system
 - a versioned, isolated copy of the component that can be used independently of the system, either imported by a Sass project, or pulled as compiled CSS
