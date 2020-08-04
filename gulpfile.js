@@ -21,7 +21,7 @@ sass.compiler = require('sass');
 const component = "component-accordion";
 
 // Version
-const verCSS = "0-0-14";
+const verCSS = "0-0-15";
 const verJS = verCSS.replace("-", "").replace("-", "");
 
 // Development Tasks
@@ -129,6 +129,12 @@ const verJS = verCSS.replace("-", "").replace("-", "");
 
         // Markup Prep
 
+            // Move component markup for system reference.
+            function moveProdComponentSystemMarkup() {
+                return src("dev/markup/**/*")
+                .pipe(dest("dist/reference"));
+            }
+
         // Script Prep
 
             // Move component scripts untouched.
@@ -157,7 +163,7 @@ const verJS = verCSS.replace("-", "").replace("-", "");
             }
 
         // System Prep Task
-        const prodSystemPrep = series(prepProdComponentSystemScript, moveProdComponentPartialSystemSass, moveProdComponentSystemSass);
+        const prodSystemPrep = series(moveProdComponentSystemMarkup, prepProdComponentSystemScript, moveProdComponentPartialSystemSass, moveProdComponentSystemSass);
 
     // Version Prep
 
