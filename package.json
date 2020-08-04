@@ -1,6 +1,6 @@
 {
   "name": "@hydrogen-design-system/component-accordion",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Hydrogen's functional accordion component.",
   "main": "npm.js",
   "scripts": {
