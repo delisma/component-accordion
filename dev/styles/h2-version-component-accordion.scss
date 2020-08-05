@@ -27,11 +27,11 @@
 }
 
 // Load the right-aligned accordion mixin with its respective theme variables.
-[data-h2-accordion-$H2VER="right"] {
+[data-h2-accordion-$H2VER*="right"] {
     @include h2ComponentAccordionRight;
 }
 
 // Load the left-aligned accordion mixin with its respective theme variables.
-[data-h2-accordion-$H2VER="left"] {
+[data-h2-accordion-$H2VER*="left"] {
     @include h2ComponentAccordionLeft;
 }
