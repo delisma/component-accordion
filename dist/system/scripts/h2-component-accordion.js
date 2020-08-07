@@ -15,14 +15,26 @@ function h2ComAccFocusable(focusElement) {
 function accordionTrigger(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
     if ($(trigger).parents(accordion).hasClass("h2-active")) {
+        // Get the manual focus item.
+        var targetInput = $(accordion).find("[data-h2-focus]");
+        // Ensure that the object manually set to be focusable is no longer focusable.
+        $(targetInput).attr("tabindex", "-1");
+        // Close the accordion.
         $(trigger).attr("aria-expanded", "false");
         $(trigger).parents(accordion).removeClass("h2-active");
         $(trigger).parents(accordion).find(content).attr("aria-hidden", "true");
     } else {
+        // Open the accordion.
         $(trigger).attr("aria-expanded", "true");
         $(trigger).parents(accordion).addClass("h2-active");
         $(trigger).parents(accordion).find(content).attr("aria-hidden", "false");
+        // Get the manual focus item.
+        var targetInput = $(accordion).find("[data-h2-focus]");
+        // Ensure that the object manually set to be focusable is in fact focusable.
+        $(targetInput).attr("tabindex", "0");
+        // Get the content area.
         var siblingContent = $(trigger).siblings(content);
+        // Determine all focusable items in the content area.
         var focusableItems = h2ComAccFocusable(siblingContent);
         var firstFocusableItem = $(focusableItems).first();
         if (focusableItems.length != 0) {

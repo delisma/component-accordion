@@ -1,29 +1,41 @@
 // Hydrogen / Components / Accordion
 
 // "hasAttr" Function
-$.fn.h2ComAccHasAttr0017 = function (name) {
+$.fn.h2ComAccHasAttr0018 = function (name) {
     var attr = $(this).attr(name);
     return (typeof attr !== typeof undefined && attr !== false);
 };
 
 // Focusable Items
-function h2ComAccFocusable0017(focusElement) {
+function h2ComAccFocusable0018(focusElement) {
     return (focusElement.find('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
 }
 
 // Accordion Open/Close
-function accordionTrigger0017(trigger, accordion) {
+function accordionTrigger0018(trigger, accordion) {
     var content = "[data-h2-accordion-content]";
     if ($(trigger).parents(accordion).hasClass("h2-active")) {
+        // Get the manual focus item.
+        var targetInput = $(accordion).find("[data-h2-focus]");
+        // Ensure that the object manually set to be focusable is no longer focusable.
+        $(targetInput).attr("tabindex", "-1");
+        // Close the accordion.
         $(trigger).attr("aria-expanded", "false");
         $(trigger).parents(accordion).removeClass("h2-active");
         $(trigger).parents(accordion).find(content).attr("aria-hidden", "true");
     } else {
+        // Open the accordion.
         $(trigger).attr("aria-expanded", "true");
         $(trigger).parents(accordion).addClass("h2-active");
         $(trigger).parents(accordion).find(content).attr("aria-hidden", "false");
+        // Get the manual focus item.
+        var targetInput = $(accordion).find("[data-h2-focus]");
+        // Ensure that the object manually set to be focusable is in fact focusable.
+        $(targetInput).attr("tabindex", "0");
+        // Get the content area.
         var siblingContent = $(trigger).siblings(content);
-        var focusableItems = h2ComAccFocusable0017(siblingContent);
+        // Determine all focusable items in the content area.
+        var focusableItems = h2ComAccFocusable0018(siblingContent);
         var firstFocusableItem = $(focusableItems).first();
         if (focusableItems.length != 0) {
             firstFocusableItem[0].focus();
@@ -33,13 +45,13 @@ function accordionTrigger0017(trigger, accordion) {
 
 // Accordion Trigger
 $(document).ready(function () {
-    $(document).on("click", "[data-h2-accordion-0-0-17] [data-h2-accordion-trigger]", function (e) {
+    $(document).on("click", "[data-h2-accordion-0-0-18] [data-h2-accordion-trigger]", function (e) {
         e.preventDefault();
-        if ($(this).parents("[data-h2-accordion-0-0-17]").h2ComAccHasAttr0017("data-h2-no-js") == true) {
+        if ($(this).parents("[data-h2-accordion-0-0-18]").h2ComAccHasAttr0018("data-h2-no-js") == true) {
             // Do nothing.
         } else {
-            var accordion = "[data-h2-accordion-0-0-17]";
-            accordionTrigger0017(this, accordion);
+            var accordion = "[data-h2-accordion-0-0-18]";
+            accordionTrigger0018(this, accordion);
         }
     });
 });
