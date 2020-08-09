@@ -1,10 +1,14 @@
 // Hydrogen / Components / Accordion
 
-@mixin h2ComponentAccordionReset($font-scale-default) {
+@mixin h2-component-accordion-reset(
+    $font-scale-default
+) {
     font-size: $font-scale-default
 }
 
-@mixin h2ComponentAccordionGeneric($focus-color) {
+@mixin h2-component-accordion-generic(
+    $focus-color
+) {
 
     // Trigger
     [data-h2-accordion-trigger] {
@@ -80,7 +84,7 @@
 
 }
 
-@mixin h2ComponentAccordionRight {
+@mixin h2-component-accordion-right {
 
     // Trigger
     [data-h2-accordion-trigger] {
@@ -99,7 +103,7 @@
 
 }
 
-@mixin h2ComponentAccordionLeft {
+@mixin h2-component-accordion-left {
 
     // Trigger
     [data-h2-accordion-trigger] {

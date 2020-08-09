@@ -19,19 +19,23 @@
 // $H2VER is replaced during the Gulp build script with the current component version, set in Gulpfile.js, before Sass is compiled.
 [data-h2-accordion-$H2VER] {
     // Load the component's unique reset styles.
-    @include h2ComponentAccordionReset($font-scale-default: var.$font-scale-default);
+    @include h2-component-accordion-reset(
+        $font-scale-default: var.$font-scale-default
+    );
     // Load the core.
-    @include core.h2UniversalReset;
+    @include core.h2-universal-reset;
     // Load the generic component mixin.
-    @include h2ComponentAccordionGeneric($focus-color: var.$focus-color);
+    @include h2-component-accordion-generic(
+        $focus-color: var.$focus-color
+    );
 }
 
 // Load the right-aligned accordion mixin with its respective theme variables.
 [data-h2-accordion-$H2VER*="right"] {
-    @include h2ComponentAccordionRight;
+    @include h2-component-accordion-right;
 }
 
 // Load the left-aligned accordion mixin with its respective theme variables.
 [data-h2-accordion-$H2VER*="left"] {
-    @include h2ComponentAccordionLeft;
+    @include h2-component-accordion-left;
 }

@@ -26,15 +26,17 @@
 
 // Load the generic accordion mixin with its respective theme variables.
 [data-h2-accordion] {
-    @include h2ComponentAccordionGeneric($focus-color: var.$focus-color);
+    @include h2-component-accordion-generic(
+        $focus-color: var.$focus-color
+    );
 }
 
 // Load the right-aligned accordion mixin with its respective theme variables.
 [data-h2-accordion*="right"] {
-    @include h2ComponentAccordionRight;
+    @include h2-component-accordion-right;
 }
 
 // Load the left-aligned accordion mixin with its respective theme variables.
 [data-h2-accordion*="left"] {
-    @include h2ComponentAccordionLeft;
+    @include h2-component-accordion-left;
 }

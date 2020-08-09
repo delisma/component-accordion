@@ -16,22 +16,26 @@
 @use "component-accordion" as *;
 
 // Load the core and component mixins within the versioned component attribute, while passing them their respective theme variables.
-// 0-0-18 is replaced during the Gulp build script with the current component version, set in Gulpfile.js, before Sass is compiled.
-[data-h2-accordion-0-0-18] {
+// 0-0-19 is replaced during the Gulp build script with the current component version, set in Gulpfile.js, before Sass is compiled.
+[data-h2-accordion-0-0-19] {
     // Load the component's unique reset styles.
-    @include h2ComponentAccordionReset($font-scale-default: var.$font-scale-default);
+    @include h2-component-accordion-reset(
+        $font-scale-default: var.$font-scale-default
+    );
     // Load the core.
-    @include core.h2UniversalReset;
+    @include core.h2-universal-reset;
     // Load the generic component mixin.
-    @include h2ComponentAccordionGeneric($focus-color: var.$focus-color);
+    @include h2-component-accordion-generic(
+        $focus-color: var.$focus-color
+    );
 }
 
 // Load the right-aligned accordion mixin with its respective theme variables.
-[data-h2-accordion-0-0-18*="right"] {
-    @include h2ComponentAccordionRight;
+[data-h2-accordion-0-0-19*="right"] {
+    @include h2-component-accordion-right;
 }
 
 // Load the left-aligned accordion mixin with its respective theme variables.
-[data-h2-accordion-0-0-18*="left"] {
-    @include h2ComponentAccordionLeft;
+[data-h2-accordion-0-0-19*="left"] {
+    @include h2-component-accordion-left;
 }
