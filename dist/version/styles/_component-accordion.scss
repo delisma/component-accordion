@@ -79,7 +79,8 @@
 
     // Focused State
     [data-h2-accordion-trigger]:focus {
-        outline: $focus-color solid 3px;
+        box-shadow: -1px -1px 0 $focus-color, 0 -2px 0 $focus-color, -1px 1px 0 $focus-color, 2px 0 0 $focus-color, 1px 1px 0 $focus-color, 0 2px 0 $focus-color, -1px 1px 0 $focus-color, -2px 0 0 $focus-color;
+        outline: none;
     }
 
 }
