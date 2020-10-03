@@ -88,7 +88,9 @@
 
     // Trigger
     [data-h2-accordion-trigger] {
+        padding-top: 0;
         padding-left: 0;
+        padding-bottom: 0;
         padding-right: 5rem;
 
         // Trigger Icons
@@ -107,7 +109,10 @@
 
     // Trigger
     [data-h2-accordion-trigger] {
+        padding-top: 0;
         padding-left: 5rem;
+        padding-bottom: 0;
+        padding-right: 0;
 
         // Trigger Icons
         [data-h2-accordion-add-icon] {
