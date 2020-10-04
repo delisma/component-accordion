@@ -45,7 +45,7 @@ function accordionTrigger$H2VERJS(trigger, accordion) {
 
 // Accordion Trigger
 $(document).ready(function () {
-    $(document).on("click", "[data-h2-accordion$H2VERCSS] [data-h2-accordion-trigger]", function (e) {
+    $("[data-h2-accordion$H2VERCSS] [data-h2-accordion-trigger]").on("click", function (e) {
         e.preventDefault();
         if ($(this).parents("[data-h2-accordion$H2VERCSS]").h2ComAccHasAttr$H2VERJS("data-h2-no-js") == true) {
             // Do nothing.
