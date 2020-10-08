@@ -35,3 +35,29 @@ You will need:
 - `npm publish`
   - builds the component
   - publishes it to the public package repository
+
+## Twig Support
+
+You can import Hydrogen's accordion component into your Twig enabled project using the following:
+
+```
+{% include "PATH-TO-PACKAGE-OR-CUSTOM-COMPONENT/accordion.twig" with {
+    enabled: false,
+    state: "closed",
+    orientation: "left",
+    expandIcon: "+",
+    collapseIcon: "-",
+    title: "",
+    subtitle: "",
+    content: [],
+    attributes: {
+        accordion: [],
+        trigger: [],
+        expandIcon: [],
+        collapseIcon: [],
+        triggerTitle: [],
+        triggerSubtitle: [],
+        content: []
+    }
+} %}
+```

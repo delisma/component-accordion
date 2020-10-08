@@ -1,4 +1,7 @@
 <div 
+    {% if enabled == true %}
+        data-h2-no-js
+    {% endif %}
     {% if state != "closed" %}
         class="h2-active"
     {% endif %}
