@@ -17,9 +17,9 @@ This component currently supports the following markup and/or frameworks:
 ## Contributing
 
 The core code for this component can be found in:
-- dev/markup/
-- dev/scripts/
-- dev/styles/_component-accordion.scss
+- src/markup/
+- src/scripts/
+- src/styles/_component-accordion.scss
 
 You will need:
 - [Node](https://nodejs.org/en/)
@@ -50,6 +50,8 @@ You can import Hydrogen's accordion component into your Twig enabled project usi
     title: "",
     subtitle: "",
     content: [],
+    classes: [],
+    id: "",
     attributes: {
         accordion: [],
         trigger: [],

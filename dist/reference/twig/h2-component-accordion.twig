@@ -2,8 +2,19 @@
     {% if enabled == true %}
         data-h2-no-js
     {% endif %}
-    {% if state != "closed" %}
-        class="h2-active"
+    {% if id %}
+        id="{{ id }}"
+    {% endif %}
+    {% if classes %}
+        {% if state != "closed" %}
+            class="h2-active {% for class in classes %}{{ class }} {% endfor %}"
+        {% else %}
+            class="{% for class in classes %}{{ class }} {% endfor %}"
+        {% endif %}
+    {% else %}
+        {% if state != "closed" %}
+            class="h2-active"
+        {% endif %}
     {% endif %}
     data-h2-accordion="{{ orientation }}"
     {% for attribute in attributes.accordion %}
@@ -27,13 +38,13 @@
             data-h2-accordion-add-icon
             {% for attribute in attributes.expandIcon %}
                 {{ attribute }}
-            {% endfor %}>{% if expandIcon %}{{ expandIcon }}{% else %}+{% endif %}</span>
+            {% endfor %}>{% if expandIcon %}{{ expandIcon }}{% else %}▸{% endif %}</span>
         <span 
             aria-hidden="true" 
             data-h2-accordion-remove-icon
             {% for attribute in attributes.collapseIcon %}
                 {{ attribute }}
-            {% endfor %}>{% if collapseIcon %}{{ collapseIcon }}{% else %}-{% endif %}</span>
+            {% endfor %}>{% if collapseIcon %}{{ collapseIcon }}{% else %}▾{% endif %}</span>
         <div data-h2-accordion-trigger-content>
             <p
                 {% for attribute in attributes.triggerTitle %}
