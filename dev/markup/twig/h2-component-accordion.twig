@@ -1,0 +1,66 @@
+<div 
+    {% if state != "closed" %}
+        class="h2-active"
+    {% endif %}
+    data-h2-accordion="{{ orientation }}"
+    {% for attribute in attributes.accordion %}
+        {{ attribute }}
+    {% endfor %}>
+    <button 
+        {% if state == "closed" %}
+            aria-expanded="false" 
+        {% else %}
+            aria-expanded="true" 
+        {% endif %}
+        data-h2-accordion-trigger 
+        tabindex="0" 
+        type="button"
+        {% for attribute in attributes.trigger %}
+            {{ attribute }}
+        {% endfor %}>
+        <span data-h2-accordion-trigger-label>Click to view...</span>
+        <span 
+            aria-hidden="true" 
+            data-h2-accordion-add-icon
+            {% for attribute in attributes.expandIcon %}
+                {{ attribute }}
+            {% endfor %}>{% if expandIcon %}{{ expandIcon }}{% else %}+{% endif %}</span>
+        <span 
+            aria-hidden="true" 
+            data-h2-accordion-remove-icon
+            {% for attribute in attributes.collapseIcon %}
+                {{ attribute }}
+            {% endfor %}>{% if collapseIcon %}{{ collapseIcon }}{% else %}-{% endif %}</span>
+        <div data-h2-accordion-trigger-content>
+            <p
+                {% for attribute in attributes.triggerTitle %}
+                    {{ attribute }}
+                {% endfor %}>{{ title }}</p>
+            {% if subtitle %}
+                <p
+                    {% for attribute in attributes.triggerSubtitle %}
+                        {{ attribute }}
+                    {% endfor %}>{{ subtitle }}</p>
+            {% endif %}
+        </div>
+    </button>
+    <div 
+        {% if state == "closed" %}
+            aria-hidden="true" 
+        {% else %}
+            aria-hidden="false" 
+        {% endif %}
+        data-h2-accordion-content
+        data-h2-focus
+        {% for attribute in attributes.content %}
+            {{ attribute }}
+        {% endfor %}>
+        {% if content is iterable %}
+            {% for i in content %}
+                {{ i }}
+            {% endfor %}
+        {% else %}
+            {{ content }}
+        {% endif %}
+    </div>
+</div>

@@ -1,4 +1,4 @@
-# Hydrogen: Accordion Component
+# Hydrogen: accordion
 
 Hydrogen's components are built using [Gulp](https://gulpjs.com/), [Sass](https://sass-lang.com), [Autoprefixer](https://github.com/postcss/autoprefixer), and [CSSnano](https://cssnano.co/).
 
@@ -9,7 +9,8 @@ This component module contains the following in the `dist` folder:
 - a versioned, isolated copy of the component that can be used independently of the system, either imported by a Sass project, or pulled as compiled CSS
 
 This component currently supports the following markup and/or frameworks:
-- raw HTML
+- HTML
+- [Twig](https://twig.symfony.com/)
 
 * Please ensure that work on this component updates all supported markup where possible.
 
