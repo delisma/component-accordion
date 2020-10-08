@@ -5,21 +5,21 @@ Hydrogen's components are built using [Gulp](https://gulpjs.com/), [Sass](https:
 Hydrogen components require [Cash](https://kenwheeler.github.io/cash/) to work properly. Cash is a lightweight jQuery alternative and will eventually be phased out of Hydrogen in favour of vanilla JavaScript.
 
 This component module contains the following in the `dist` folder:
-- the component's code that is imported by @hydrogen-design-system/system
+- the component's code that is imported by `@hydrogen-design-system/system`
 - a versioned, isolated copy of the component that can be used independently of the system, either imported by a Sass project, or pulled as compiled CSS
 
 This component currently supports the following markup and/or frameworks:
 - HTML
 - [Twig](https://twig.symfony.com/)
 
-* Please ensure that work on this component updates all supported markup where possible.
+**Please ensure that work on this component updates all supported markup where possible.**
 
 ## Contributing
 
-The core code for this component can be found in:
-- src/markup/
-- src/scripts/
-- src/styles/_component-accordion.scss
+The code for this component can be found in:
+- `src/markup/`
+- `src/scripts/`
+- `src/styles/`
 
 You will need:
 - [Node](https://nodejs.org/en/)
@@ -38,7 +38,7 @@ You will need:
 
 ## Twig Support
 
-You can import Hydrogen's accordion component into your Twig enabled project using the following:
+You can import Hydrogen's accordion component into your [Twig](https://twig.symfony.com/) enabled project using the following:
 
 ```
 {% include "PATH-TO-PACKAGE-OR-CUSTOM-COMPONENT/accordion.twig" with {
