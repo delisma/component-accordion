@@ -42,7 +42,7 @@ You can import Hydrogen's accordion component into your Twig enabled project usi
 
 ```
 {% include "PATH-TO-PACKAGE-OR-CUSTOM-COMPONENT/accordion.twig" with {
-    enabled: false,
+    enabled: true,
     state: "closed",
     orientation: "left",
     expandIcon: "+",
