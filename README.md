@@ -1,42 +1,16 @@
-# Hydrogen: accordion
+# Hydrogen's Accordion Component
 
-Hydrogen's components are built using [Gulp](https://gulpjs.com/), [Sass](https://sass-lang.com), [Autoprefixer](https://github.com/postcss/autoprefixer), and [CSSnano](https://cssnano.co/).
+## Installation
 
-Hydrogen components require [Cash](https://kenwheeler.github.io/cash/) to work properly. Cash is a lightweight jQuery alternative and will eventually be phased out of Hydrogen in favour of vanilla JavaScript.
+You can install this component as a standalone package using `npm install @hydrogen-design-system/component-accordion --save-dev`
 
-This component module contains the following in the `dist` folder:
-- the component's code that is imported by `@hydrogen-design-system/system`
-- a versioned, isolated copy of the component that can be used independently of the system, either imported by a Sass project, or pulled as compiled CSS
+This component can also be installed as a part of Hydrogen in its entirety. [Learn more](https://hydrogen.design).
 
-This component currently supports the following markup and/or frameworks:
-- HTML
-- [Twig](https://twig.symfony.com/)
+## Usage
 
-**Please ensure that work on this component updates all supported markup where possible.**
+For standard usage, please see [Hydrogen's documentation](https://hydrogen.design).
 
-## Contributing
-
-The code for this component can be found in:
-- `src/markup/`
-- `src/scripts/`
-- `src/styles/`
-
-You will need:
-- [Node](https://nodejs.org/en/)
-
-### Important Commands
-- `npm install`
-  - installs all development dependencies
-- `npm run dev`
-  - builds the versioned instance of the component and opens the test file in your browser with browser-sync running so that you can moderate your changes
-- `npm run build`
-  - runs the build command to process all files for production
-  - this will automatically build the system and instanced versions of the component
-- `npm publish`
-  - builds the component
-  - publishes it to the public package repository
-
-## Twig Support
+### Twig Support
 
 You can import Hydrogen's accordion component into your [Twig](https://twig.symfony.com/) enabled project using the following:
 
@@ -63,3 +37,39 @@ You can import Hydrogen's accordion component into your [Twig](https://twig.symf
     }
 } %}
 ```
+
+## Contributing
+
+Hydrogen's components are built using [Gulp](https://gulpjs.com/), [Sass](https://sass-lang.com), [Autoprefixer](https://github.com/postcss/autoprefixer), and [CSSnano](https://cssnano.co/).
+
+Hydrogen components require [Cash](https://kenwheeler.github.io/cash/) to work properly. Cash is a lightweight jQuery alternative and will eventually be phased out of Hydrogen in favour of vanilla JavaScript.
+
+This component module contains the following in the `dist` folder:
+- the component's code that is imported by `@hydrogen-design-system/system`
+- a versioned, isolated copy of the component that can be used independently of the system, either imported by a Sass project, or pulled as compiled CSS
+
+This component currently supports the following markup and/or frameworks:
+- HTML
+- [Twig](https://twig.symfony.com/)
+
+**Please ensure that work on this component updates all supported markup where possible.**
+
+The code for this component can be found in:
+- `src/markup/`
+- `src/scripts/`
+- `src/styles/`
+
+You will need:
+- [Node](https://nodejs.org/en/)
+
+### Important Commands
+- `npm install`
+  - installs all development dependencies
+- `npm run dev`
+  - builds the versioned instance of the component and opens the test file in your browser with browser-sync running so that you can moderate your changes
+- `npm run build`
+  - runs the build command to process all files for production
+  - this will automatically build the system and instanced versions of the component
+- `npm publish`
+  - builds the component
+  - publishes it to the public package repository
