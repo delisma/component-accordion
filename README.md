@@ -1,4 +1,4 @@
-# Hydrogen's Accordion Component
+# Hydrogen's accordion component
 
 ## Installation
 
@@ -10,7 +10,7 @@ This component can also be installed as a part of Hydrogen in its entirety. [Lea
 
 For standard usage, please see [Hydrogen's documentation](https://hydrogen.design).
 
-### Twig Support
+### Twig support
 
 You can import Hydrogen's accordion component into your [Twig](https://twig.symfony.com/) enabled project using the following:
 
@@ -62,7 +62,7 @@ The code for this component can be found in:
 You will need:
 - [Node](https://nodejs.org/en/)
 
-### Important Commands
+### Important commands
 - `npm install`
   - installs all development dependencies
 - `npm run dev`
